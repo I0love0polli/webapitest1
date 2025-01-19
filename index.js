@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
 
+app.listen(3000 , () =>{
+    console.log("avvio");
+});
 
 
 app.get(  "/"  ,(req,res) =>{
@@ -9,7 +11,7 @@ app.get(  "/"  ,(req,res) =>{
 })
 
 
-app.get(port , () => {
-    console.log(`Server is running on port ${port}`);
+app.get("/show" , (req,res) => {
+    res.send("<h1> ciaooo : "+req.query.q + "</h1>")
 
 });
